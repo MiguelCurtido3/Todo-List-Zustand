@@ -1,12 +1,13 @@
 'use client';
 import { DragDropContext, Droppable } from '@hello-pangea/dnd';
 import { useTodoStore } from '../store/todoStore';
+import { DropResult } from '@hello-pangea/dnd';
 import TodoItem from './TodoItem';
 
 export default function TodoList() {
   const { todos, reorderTodos } = useTodoStore();
 
-  function onDragEnd(result: any) {
+  function onDragEnd(result: DropResult) {
     if (!result.destination) return;
     reorderTodos(result.source.index, result.destination.index);
   }

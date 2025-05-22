@@ -5,7 +5,7 @@ import { useTodoStore } from '../store/todoStore';
 
 export default function Page() {
   const [input, setInput] = useState('');
-  const addTodo = useTodoStore((state: any) => state.addTodo);
+  const addTodo = useTodoStore((state) => state.addTodo);
 
   function handleAdd() {
     if (!input.trim()) return;
